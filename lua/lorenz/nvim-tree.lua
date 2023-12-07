@@ -1,0 +1,18 @@
+ function My_on_attach(bufnr)
+  local api = require "nvim-tree.api"
+
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  -- default mappings
+  api.config.mappings.default_on_attach(bufnr)
+
+  -- custom mappings
+  vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,        opts('Up'))
+  vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
+end
+
+vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeOpen<CR>')
+vim.keymap.set('n', '<leader>qt', '<cmd>NvimTreeToggle<CR>')
+
