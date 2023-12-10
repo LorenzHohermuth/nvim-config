@@ -12,7 +12,3 @@
   vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,        opts('Up'))
   vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
 end
-
-vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeOpen<CR>')
-vim.keymap.set('n', '<leader>qt', '<cmd>NvimTreeToggle<CR>')
-
