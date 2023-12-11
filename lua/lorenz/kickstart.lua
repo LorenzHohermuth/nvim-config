@@ -245,7 +245,12 @@ require('lazy').setup({
         on_attach = My_on_attach,
       }
     end,
-  }
+  },
+
+  {
+    "mbbill/undotree",
+    lazy = false
+  },
 }, {})
 
 -- [[ Setting options ]]
